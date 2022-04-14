@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from routes.challenges import challenges
+from utils.db import magodb
 
 
 app = Flask(__name__)
