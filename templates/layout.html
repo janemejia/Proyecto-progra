@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{% block title %} {% endblock %} </title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' href="/static/style.css">   <!-- para meterle el diseño CSS-->
+    <!-- Ese link permite poner iconos de paginas web que redirigan al link deseado (opcional)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-2/css/all.min.css"> -->
+    <script src='main.js'></script> <!-- revisar -->
 </head>
 
+<!-- link para redirigir los puse en el html base para que siempre esten deisponibles en los demas html que creemos -->
 <body>
-    {% block contents %}{% endblock %}
-</body>
+    <div class="header">
+        <h1>El Mago </h1> <br>
+    </div>
+    <nav class="navbar">
+    <ul>
+        <li><a href="{{ url_for('auth.home') }}">Inicio</a></li>
+        <li><a href="#Noticias">Noticias</a></li>
+        <li><a href="#Entrevistas">Entrevistas</a></li>
+        <li><a href="{{ url_for('challenges.home') }}">Challenges</a></li>
+        <li><a href="#info">Sobre nosotros</a></li>
+        <li><a href="#Contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    {% block contents %} {% endblock %} 
 
+    
+    <br>
+    {% block  contents2 %} 
+    
+    {% endblock %}
+
+
+    {% block contents3 %} 
+
+    {% endblock %}
+
+
+
+
+
+
+    <footer>
+        <!-- Poner contacto y redes sociales del dueño de la pág-->
+        <!-- 
+        <div class="Contacto "> 
+            <h4 id="Contacto"><b><u>Redes Sociales</u></b></h4>
+            <ul>
+                <li type="none"> </li> 
+            </ul>
+            <div class="social_networks">
+                <a href=" " class="github"><i class="fab fa-github"></i></a>
+            </div>
+        </div>  -->
+    </footer>
+</body>
 </html>
