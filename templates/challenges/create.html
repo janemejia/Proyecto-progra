@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block title %}Crear una nuevo challenge{% endblock %}
+{% block contents %}
+<h1>Create a challenge</h1>
+<br>
+
+
+<p>Hello, {{user}}</p>
+<br>
+<!-- Incluir boton de logout? -->
+<!--<a href="{{ url_for('auth.logout') }}">logout</a>-->
+<a href="{{ url_for('challenges.home') }}">cancelar</a>
+
+<p>please create your challenge here:</p>
+<br>
+<form action="{{ url_for('challenges.create') }}" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.deporte.label }}
+    {{ form.deporte }}
+    {{ form.fecha.label }}
+    {{ form.fecha }}
+    {{ form.descripcion.label }}
+    {{ form.descripcion }}
+    {{ form.imagen.label }}
+    {{ form.imagen }}
+    {{ form.video.label }}
+    {{ form.video }}
+    {{ form.submit }}
+    
+</form>
+
+{% endblock %}
