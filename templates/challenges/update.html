@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}Actualiza un challenge{% endblock %}
+{% block contents %}
+<h1> Update challenge</h1>
+<br>
+{% if user %}
+<p>Hello, {{user}}</p>
+<br>
+<a href="{{ url_for('auth.logout') }}">logout</a>
+{% endif %}
+<p>please update your challenge here:</p>
+<br>
+<form action="{{ url_for('challenges.update',id=currentNew.id) }}" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.descripcion.label }}
+    {{ form.descripcion }}
+    {{ form.imagen.label }}
+    {{ form.imagen }}
+    {{ form.submit }}  
+</form>
+
+{% endblock %}
